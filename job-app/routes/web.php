@@ -9,7 +9,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::get('/test-groq', [JobVacancyController::class, 'testGroqApi'])->name('test.groq');
 
 Route::middleware('auth')->group(function () {
     Route::get('/job-applications', [JobApplicationsController::class, 'index'])->name('job-applications.index');
